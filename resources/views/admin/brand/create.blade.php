@@ -1,4 +1,4 @@
-@extends('extra.master')
+@extends('layout.app')
 @section('title', 'Brand beans | Create Brand Category')
 @section('content')
     <div class='container'>
