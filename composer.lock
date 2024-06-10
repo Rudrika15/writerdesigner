@@ -2039,16 +2039,16 @@
         },
         {
             "name": "lcobucci/jwt",
-            "version": "4.0.4",
+            "version": "5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lcobucci/jwt.git",
-                "reference": "55564265fddf810504110bd68ca311932324b0e9"
+                "reference": "08071d8d2c7f4b00222cc4b1fb6aa46990a80f83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/55564265fddf810504110bd68ca311932324b0e9",
-                "reference": "55564265fddf810504110bd68ca311932324b0e9",
+                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/08071d8d2c7f4b00222cc4b1fb6aa46990a80f83",
+                "reference": "08071d8d2c7f4b00222cc4b1fb6aa46990a80f83",
                 "shasum": ""
             },
             "require": {
@@ -2099,7 +2099,7 @@
             ],
             "support": {
                 "issues": "https://github.com/lcobucci/jwt/issues",
-                "source": "https://github.com/lcobucci/jwt/tree/4.0.4"
+                "source": "https://github.com/lcobucci/jwt/tree/5.3.0"
             },
             "funding": [
                 {
@@ -2111,7 +2111,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-09-28T19:18:28+00:00"
+            "time": "2024-04-11T23:07:54+00:00"
         },
         {
             "name": "league/commonmark",
@@ -6984,16 +6984,16 @@
         },
         {
             "name": "vonage/client-core",
-            "version": "4.3.2",
+            "version": "4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Vonage/vonage-php-sdk-core.git",
-                "reference": "a7db15d14754ce21b0006452e16dd907577c1e4b"
+                "reference": "22694f74a6080587e2b596b7a1d8f066d21418fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Vonage/vonage-php-sdk-core/zipball/a7db15d14754ce21b0006452e16dd907577c1e4b",
-                "reference": "a7db15d14754ce21b0006452e16dd907577c1e4b",
+                "url": "https://api.github.com/repos/Vonage/vonage-php-sdk-core/zipball/22694f74a6080587e2b596b7a1d8f066d21418fc",
+                "reference": "22694f74a6080587e2b596b7a1d8f066d21418fc",
                 "shasum": ""
             },
             "require": {
@@ -7043,7 +7043,59 @@
                 "issues": "https://github.com/Vonage/vonage-php-sdk-core/issues",
                 "source": "https://github.com/Vonage/vonage-php-sdk-core"
             },
-            "time": "2023-10-02T09:26:26+00:00"
+            "time": "2024-05-28T15:33:43+00:00"
+        },
+        {
+            "name": "vonage/jwt",
+            "version": "0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Vonage/vonage-php-jwt.git",
+                "reference": "c84adbf1c8d90526dde85a025b011aeeb8bc4c96"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Vonage/vonage-php-jwt/zipball/c84adbf1c8d90526dde85a025b011aeeb8bc4c96",
+                "reference": "c84adbf1c8d90526dde85a025b011aeeb8bc4c96",
+                "shasum": ""
+            },
+            "require": {
+                "lcobucci/jwt": "^4.3.0|^5.0",
+                "php": "~8.1 || ~8.2 || ~8.3",
+                "ramsey/uuid": "^4.7.5"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^8.5|^9.4",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vonage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "James Seconde",
+                    "email": "jim.seconde@vonage.com",
+                    "role": "PHP Developer Advocate"
+                },
+                {
+                    "name": "Chris Tankersley",
+                    "email": "chris@ctankersley.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A standalone package for creating JWTs for Vonage APIs",
+            "support": {
+                "source": "https://github.com/Vonage/vonage-php-jwt/tree/0.5.1"
+            },
+            "time": "2024-01-19T11:15:22+00:00"
         },
         {
             "name": "vonage/nexmo-bridge",
@@ -10148,5 +10200,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

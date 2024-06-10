@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\OtpController;
+use App\Http\Controllers\designer\DashboardController;
 use App\Http\Controllers\designer\DesignController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\writer\WriterController;
@@ -22,18 +23,6 @@ Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::group(['middleware' => ['auth']], function () {
-    Route::prefix('/')->group(__DIR__ . '/admin/adminRoute.php');
-    Route::prefix('/')->group(__DIR__ . '/user/userRoute.php');
-    Route::prefix('/')->group(__DIR__ . '/writer/writerRoute.php');
-    Route::prefix('/')->group(__DIR__ . '/designer/designerRoute.php');
-    Route::prefix('/')->group(__DIR__ . '/brand/brandRoute.php');
-    Route::prefix('/')->group(__DIR__ . '/influencer/influencerRoute.php');
-    Route::prefix('/')->group(__DIR__ . '/reseller/resellerRoute.php');
-
-    Route::get('/fetch-layout', [App\Http\Controllers\HomepageController::class, 'fetchLayout'])->name('fetch-layout');
 });
 
 // OTP 
