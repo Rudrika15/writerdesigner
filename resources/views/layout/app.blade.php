@@ -43,14 +43,205 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}  mt-2">
+            <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
+
+            @role('Admin')
+                <div class="sidebar-heading text-center">
+                    USER MANAGMENT
+                </div>
+                <li class="nav-item {{ request()->is('users*') ? 'active' : '' }} ">
+                    <a class="nav-link" href="{{ route('users.index') }}">
+                        {{--  <i class="fa fa-users"></i>  --}}
+                        <span>User Management</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('roles*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('roles.index') }}">
+                        {{--  <i class="fa fa-user-check"></i>  --}}
+                        <span>Role Management</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('assign*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('users.assignRole') }}">
+                        {{--  <i class="fa fa-user-plus"></i>  --}}
+                        <span>Assign Role</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('admin/brand*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.brand.list') }}">
+                        {{--  <i class="fa fa-users"></i>  --}}
+                        <span>Add Brand</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading text-center">
+                    CONTENT
+                </div>
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admincategory.index') }}">
+                        {{--  <i class="fa fa-tag"></i>  --}}
+                        <span>Category</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('adminmedia.index') }}">
+                        {{--  <i class="fa fa-film"></i>  --}}
+                        <span>Media</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admindownload.index') }}">
+                        {{--  <i class="fa fa-download"></i>  --}}
+                        <span>Downloads</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('adminslogan.adminslogan') }}">
+                        {{--  <i class="fa fa-chat"></i>  --}}
+                        <span>Slogan</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admindesign.admindesign') }}">
+                         {{--  <i class="fa fa-image"></i>  --}}
+                        <span>Design</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading text-center">
+                    MASTER
+                </div>
+
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admintemplatemaster.index') }}">
+                        {{--  <i class="fa fa-file-image"></i>  --}}
+                        <span>Templete</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('product.index') }}">
+                        {{--  <i class="fa fa-cart-shopping"></i>  --}}
+                        <span>Product</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.brand.activity.index') }}">
+                        {{--  <i class="fa fa-cubes"></i>  --}}
+                        <span>Package Activity</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading text-center">
+                    CREATOR
+                </div>
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('influencer.index') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Influencer Category</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('brand.category.index') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Brand Category</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Influencer Package</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('influencer.list') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Influencer List</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Reseller Payments</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Packages</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading text-center">
+                    EXTRA
+                </div>
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Banner</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('offer.index') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Offers</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('coupon.index') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Coupon</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('type.index') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Notification Type</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('typedetail.index') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Notification Type Detail</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('offerSlider.index') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Offer Slider</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading text-center">
+                    REPORT
+                </div>
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Our Users</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('writer.designer.report') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Writer/Designer</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('paymentReport.index') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Payments</span></a>
+                </li>
+            @endrole
 
             @role('Designer')
                 <li class="nav-item {{ request()->is('designer*') ? 'active' : '' }}">
