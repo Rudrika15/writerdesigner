@@ -47,9 +47,200 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
+
+            @role('Admin')
+                <div class="sidebar-heading text-center">
+                    USER MANAGMENT
+                </div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fa fa-users"></i>  --}}
+                        <span>User Management</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fa fa-user-check"></i>  --}}
+                        <span>Role Management</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fa fa-user-plus"></i>  --}}
+                        <span>Assign Role</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fa fa-users"></i>  --}}
+                        <span>Add Brand</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading text-center">
+                    CONTENT
+                </div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('admincategory.index') }}">
+                        {{--  <i class="fa fa-tag"></i>  --}}
+                        <span>Category</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fa fa-film"></i>  --}}
+                        <span>Media</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fa fa-download"></i>  --}}
+                        <span>Downloads</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fa fa-chat"></i>  --}}
+                        <span>Slogan</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                         {{--  <i class="fa fa-image"></i>  --}}
+                        <span>Design</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading text-center">
+                    MASTER
+                </div>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fa fa-file-image"></i>  --}}
+                        <span>Templete</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fa fa-cart-shopping"></i>  --}}
+                        <span>Product</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fa fa-cubes"></i>  --}}
+                        <span>Package Activity</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading text-center">
+                    CREATOR
+                </div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Influencer Category</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Brand Category</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Influencer Package</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Influencer List</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Reseller Payments</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Packages</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading text-center">
+                    EXTRA
+                </div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Banner</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Offers</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Coupon</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Notification Type</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Notification Type Detail</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Offer Slider</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading text-center">
+                    REPORT
+                </div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Our Users</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Writer/Designer</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        {{--  <i class="fas fa-fs fa-tachometer-alt"></i>  --}}
+                        <span>Payments</span></a>
+                </li>
+            @endrole
 
             @role('Designer')
                 <li class="nav-item active">

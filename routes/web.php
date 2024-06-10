@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\designer\DashboardController;
 use App\Http\Controllers\designer\DesignController;
@@ -75,3 +76,16 @@ Route::get('writer/index', [WriterController::class, 'index'])->name('writer.slu
 Route::get('writer/edit/{id?}', [WriterController::class, 'edit'])->name('writer.slugs.edit');
 Route::post('writer/update', [WriterController::class, 'update'])->name('writer.slugs.update');
 Route::get('writer/delete/{id?}', [WriterController::class, 'delete'])->name('writer.slugs.delete');
+
+
+// admin routes
+
+
+// Category
+
+Route::get('admincategory/index', [CategoryController::class, 'index'])->name('admincategory.index');
+Route::get('admincategory/create', [CategoryController::class, 'create'])->name('admincategory.create');
+Route::post('admincategory/store', [CategoryController::class, 'store'])->name('admincategory.store');
+Route::get('admincategory/edit/{id}', [CategoryController::class, 'edit'])->name('admincategory.edit');
+Route::post('admincategory/update', [CategoryController::class, 'update'])->name('admincategory.update');
+Route::get('admincategory/delete/{id?}', [CategoryController::class, 'destroy'])->name('admincategory.delete');
