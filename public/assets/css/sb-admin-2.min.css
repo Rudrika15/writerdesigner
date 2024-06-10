@@ -9555,6 +9555,17 @@ a:focus {
 .sidebar.toggled .sidebar-card {
     display: none;
 }
+.sidebar.toggled .sidebar-brand {
+    height: 4.375rem !important;
+    text-decoration: none !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    padding: 1.5rem 1rem !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05rem !important;
+    z-index: 1 !important;
+}
 .sidebar .sidebar-brand {
     height: 4.375rem;
     text-decoration: none;
@@ -10326,3 +10337,16 @@ body.sidebar-toggled footer.sticky-footer {
     width: 100%;
 }
 
+.nav-item:hover {
+    color: #00b9f0;
+    font-weight: 700 !important;
+    background-color: #00b9f0;
+}
+
+.sidebar .nav-item.active {
+    background-color: #00b9f0 !important;
+    font-weight: 700 !important;
+}
+.no-hover:hover {
+    background-color: transparent !important;
+}

@@ -59,10 +59,10 @@ Route::get('designer/dashboard', [DashboardController::class, 'dashboard'])->nam
 Route::get('designer/create/{id?}/{category?}', [DesignController::class, 'create'])->name('designer.create');
 Route::post('designer/store', [DesignController::class, 'store'])->name('designer.store');
 Route::get('designer/index', [DesignController::class, 'index'])->name('designer.index');
-Route::get('designer/show', [DesignController::class, 'show'])->name('designer.show');
-Route::get('designer/edit/{id?}', [DesignController::class, 'edit'])->name('designer.edit');
-Route::post('designer/update', [DesignController::class, 'update'])->name('designer.update');
-Route::get('designer/delete/{id?}', [DesignController::class, 'delete'])->name('designer.delete');
+Route::get('designs/show', [DesignController::class, 'show'])->name('designer.show');
+Route::get('designs/edit/{id?}', [DesignController::class, 'edit'])->name('designer.edit');
+Route::post('designs/update', [DesignController::class, 'update'])->name('designer.update');
+Route::get('designs/delete/{id?}', [DesignController::class, 'delete'])->name('designer.delete');
 
 
 

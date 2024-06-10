@@ -93,7 +93,7 @@ class DesignController extends Controller
             $design->status = 'Pending';
             $design->save();
 
-            return redirect('design/show')->with('success', 'Design Created Successfully');
+            return redirect()->back()->with('success', 'Design Created Successfully');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -152,7 +152,7 @@ class DesignController extends Controller
             $design->status = 'Pending';
             $design->save();
 
-            return redirect('design/show')->with('success', 'Design Created Successfully');
+            return redirect()->back()->with('success', 'Design Created Successfully');
         } catch (\Throwable $th) {
             throw $th;
         }

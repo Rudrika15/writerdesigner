@@ -72,9 +72,10 @@
 
                                             <td>
                                                 @if ($data->status != 'Approved')
-                                                    <a class="btn btn-primary btn-sm"
+                                                    <a class="btn btn-primary btn-sm shadow-none"
                                                         href="{{ route('designer.edit') }}/{{ $data->id }}">Edit</a>
-                                                    <a class="btn btn-danger btn-sm"
+                                                    <a class="btn btn-danger btn-sm shadow-none"
+                                                        onclick="return confirm('Do You Really Want To Delete It ?')"
                                                         href="{{ route('designer.delete') }}/{{ $data->id }}">Delete</a>
                                                 @endif
                                             </td>
