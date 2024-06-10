@@ -1,4 +1,4 @@
-@extends('extra.master')
+@extends('layout.app')
 @section('title', 'Brand beans | Slogan Create')
 @section('content')
     <div class='container'>
@@ -24,7 +24,8 @@
                             <input type="hidden" name="slugId" value="{{ $writer->id }}">
                             <div class="mb-3">
                                 <label for="title" class="form-label">Title</label>
-                                <input type="text" class="form-control" value="{{ $writer->title }}" placeholder="Enter title" id="title" name="title">
+                                <input type="text" class="form-control" value="{{ $writer->title }}"
+                                    placeholder="Enter title" id="title" name="title">
                                 @error('title')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -34,7 +35,8 @@
                                 <select name="category" class="form-control">
                                     <option disabled selected>--select category--</option>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}" {{ old('category', $writer->categoryId) == $category->id ? 'selected' : '' }}>
+                                        <option value="{{ $category->id }}"
+                                            {{ old('category', $writer->categoryId) == $category->id ? 'selected' : '' }}>
                                             {{ $category->name }}
                                         </option>
                                     @endforeach

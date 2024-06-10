@@ -31,10 +31,11 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #012e6f" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="bg-light sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="bg-light sidebar-brand d-flex align-items-center justify-content-center"
+                href="{{ route('home') }}">
                 <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
             </a>
 
@@ -42,7 +43,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}  mt-2">
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -52,7 +53,7 @@
             <hr class="sidebar-divider">
 
             @role('Designer')
-                <li class="nav-item active">
+                <li class="nav-item {{ request()->is('designer*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('designer.index') }}">
                         <i class="fa fa-edit"></i>
                         <span>Slogan</span></a>
@@ -61,20 +62,31 @@
                 <!-- Divider -->
                 <hr class="sidebar-divider">
 
-                <li class="nav-item active">
+                <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('designer.show') }}">
                         <i class="fa fa-image"></i>
                         <span>My Designs</span></a>
                 </li>
+
+                <hr class="sidebar-divider">
+            @endrole
+
+            @role('Writer')
+                <li class="nav-item {{ request()->is('writer*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('writer.slugs.index') }}">
+                        <i class="fa fa-edit"></i>
+                        <span>My Slogans</span></a>
+                </li>
+                <hr class="sidebar-divider">
             @endrole
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle" style="background-color: #00b9f0;"></button>
             </div>
 
         </ul>
@@ -87,7 +99,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light border topbar mb-4 static-top shadow">
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -95,11 +107,13 @@
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
+                        <li class="nav-item dropdown no-arrow no-hover">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg"
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                                <img class="img-profile rounded-circle"
+                                    src="{{ asset('profile') }}/{{ Auth::user()->profilePhoto }}"
                                     onerror="this.onerror=null;this.src='{{ asset('assets/img/default.jpg') }}'";>
                             </a>
                             <!-- Dropdown - User Information -->
