@@ -1,4 +1,4 @@
-@extends('extra.master')
+@extends('layout.app')
 @section('title', 'Brand beans | My Designs')
 @section('content')
     <div class='container'>
@@ -26,57 +26,64 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <table class="table table-bordered table-responsive">
-                            <thead>
-                                <tr>
-                                    {{-- <th> Media Type</th> --}}
-                                    <th> Category</th>
-                                    <th> Slogan</th>
-                                    <th> Title</th>
-                                    <th> Sequence</th>
-                                    <th> Source Path</th>
-                                    <th> Preview Path</th>
-                                    <th> Status</th>
-                                    <th width="15%"> Option</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                @foreach ($design as $data)
+                        <div class="table-responsive">
+                            <table class="table table-bordered ">
+                                <thead>
                                     <tr>
-                                        {{-- <td>{{ $data->mediaType }}</td> --}}
-                                        <td>{{ $data->categoryName }}</td>
-                                        <td>{!! $data->slugName !!}</td>
-                                        <td>{{ $data->title }}</td>
-                                        <td>{{ $data->sequence }}</td>
-
-                                        @if ($data->mediaType == 'Photo')
-                                            <td><img src="{{ url('designsourceimg') }}/{{ $data->sourcePath }}" class="img-thumbnail" style="width:50px;height:50px"></td>
-                                        @else
-                                            <td> <video width="300" class="img-thumbnail" height="300" controls>
-                                                    <source src="{{ url('designsourceimg') }}/{{ $data->sourcePath }}" type="video/mp4">
-                                                </video></td>
-                                        @endif
-                                        <td><img src="{{ url('designpreviewpath') }}/{{ $data->previewPath }}" class="img-thumbnail" style="width:50px;height:50px"></td>
-                                        @if ($data->status == 'Pending')
-                                            <td class="text-primary"><b>{{ $data->status }}</b></td>
-                                        @elseif($data->status == 'Rejected')
-                                            <td class="text-danger"><b>{{ $data->status }}</b></td>
-                                        @else
-                                            <td class="text-success"><b>{{ $data->status }}</b></td>
-                                        @endif
-
-                                        <td>
-                                            @if ($data->status != 'Approved')
-                                                <a class="btn btn-primary btn-sm" href="{{ route('designer.edit') }}/{{ $data->id }}">Edit</a>
-                                                <a class="btn btn-danger btn-sm" href="{{ route('designer.delete') }}/{{ $data->id }}">Delete</a>
-                                            @endif
-                                        </td>
+                                        {{-- <th> Media Type</th> --}}
+                                        <th> Category</th>
+                                        <th> Slogan</th>
+                                        <th> Title</th>
+                                        <th> Sequence</th>
+                                        <th> Source Path</th>
+                                        <th> Preview Path</th>
+                                        <th> Status</th>
+                                        <th width="15%"> Option</th>
                                     </tr>
-                                @endforeach
+                                </thead>
+                                <tbody>
 
-                            </tbody>
-                        </table>
+                                    @foreach ($design as $data)
+                                        <tr>
+                                            {{-- <td>{{ $data->mediaType }}</td> --}}
+                                            <td>{{ $data->categoryName }}</td>
+                                            <td>{!! $data->slugName !!}</td>
+                                            <td>{{ $data->title }}</td>
+                                            <td>{{ $data->sequence }}</td>
+
+                                            @if ($data->mediaType == 'Photo')
+                                                <td><img src="{{ url('designsourceimg') }}/{{ $data->sourcePath }}"
+                                                        class="img-thumbnail" style="width:50px;height:50px"></td>
+                                            @else
+                                                <td> <video width="300" class="img-thumbnail" height="300" controls>
+                                                        <source src="{{ url('designsourceimg') }}/{{ $data->sourcePath }}"
+                                                            type="video/mp4">
+                                                    </video></td>
+                                            @endif
+                                            <td><img src="{{ url('designpreviewpath') }}/{{ $data->previewPath }}"
+                                                    class="img-thumbnail" style="width:50px;height:50px"></td>
+                                            @if ($data->status == 'Pending')
+                                                <td class="text-primary"><b>{{ $data->status }}</b></td>
+                                            @elseif($data->status == 'Rejected')
+                                                <td class="text-danger"><b>{{ $data->status }}</b></td>
+                                            @else
+                                                <td class="text-success"><b>{{ $data->status }}</b></td>
+                                            @endif
+
+                                            <td>
+                                                @if ($data->status != 'Approved')
+                                                    <a class="btn btn-primary btn-sm"
+                                                        href="{{ route('designer.edit') }}/{{ $data->id }}">Edit</a>
+                                                    <a class="btn btn-danger btn-sm"
+                                                        href="{{ route('designer.delete') }}/{{ $data->id }}">Delete</a>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

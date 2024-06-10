@@ -26,6 +26,7 @@ Route::get('/', function () {
 });
 
 // OTP 
+Route::get('home', [DashboardController::class, 'home'])->name('home');
 
 Route::controller(OtpController::class)->group(function () {
     Route::get('loginn', 'login')->name('otp.login');
