@@ -1,4 +1,4 @@
-@extends('extra.master')
+@extends('layout.app')
 @section('title', 'Brand beans | Influencer Status Update')
 @section('content')
     <div class='container'>

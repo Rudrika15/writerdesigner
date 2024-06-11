@@ -1,4 +1,4 @@
-@extends('extra.master')
+@extends('layout.app')
 @section('title', 'Brand beans | Create Coupon ')
 @section('content')
     <div class='container'>

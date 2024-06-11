@@ -1,4 +1,4 @@
-@extends('extra.master')
+@extends('layout.app')
 @section('title', 'Brand beans | Offer Slider')
 @section('content')
     <div class='container'>
@@ -18,8 +18,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-
-                        <table class="table table-bordered table-responsive">
+                        <div class="table-responsive">
+                        <table class="table table-bordered ">
                             <thead>
                                 <tr>
                                     <th> Image</th>
@@ -42,6 +42,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
                     </div>
                 </div>
             </div>
