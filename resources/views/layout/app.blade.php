@@ -21,7 +21,6 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/styles.css') }}" rel="stylesheet"> --}}
 
 </head>
 
@@ -391,6 +390,53 @@
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('assets/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toasts = document.querySelectorAll('.toast');
+
+            function startProgressBar(toast) {
+                const progressBar = toast.querySelector('.progress-bar');
+                if (progressBar) {
+                    if (!toast.classList.contains('progress-in-progress')) {
+                        const delay = parseInt(toast.getAttribute('data-bs-delay'));
+                        progressBar.style.transition = `width ${delay}ms linear`;
+                        progressBar.style.width = '100%';
+                        toast.classList.add('progress-in-progress');
+
+                        // Check when progress bar reaches 100% width
+                        progressBar.addEventListener('transitionend', function() {
+                            if (progressBar.style.width === '100%' && !toast.classList.contains(
+                                    'hovered')) {
+                                toast.remove();
+                            }
+                        });
+                    }
+                }
+            }
+
+            function resetProgressBar(toast) {
+                const progressBar = toast.querySelector('.progress-bar');
+                if (progressBar) {
+                    progressBar.style.width = '0%';
+                    toast.classList.remove('progress-in-progress');
+                }
+            }
+
+            toasts.forEach(toast => {
+                toast.addEventListener('mouseenter', function() {
+                    toast.classList.add('hovered');
+                    resetProgressBar(toast);
+                });
+
+                toast.addEventListener('mouseleave', function() {
+                    toast.classList.remove('hovered');
+                    startProgressBar(toast);
+                });
+
+                startProgressBar(toast);
+            });
+        });
+    </script>
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('assets/js/sb-admin-2.min.js') }}"></script>
 

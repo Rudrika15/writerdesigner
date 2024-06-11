@@ -6,7 +6,7 @@
             <div class='col-md-12'>
                 <div class="d-flex justify-content-between mb-3">
                     <div class="p-2">
-                        <h3>Slogans Create</h3>
+                        <h3> Update Design</h3>
                     </div>
                     <div class="p-2">
                         <a href="{{ route('designer.show') }}" class="btn btn-primary">Back</a>

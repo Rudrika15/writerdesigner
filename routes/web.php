@@ -77,7 +77,7 @@ Route::get('designer/index', [DesignController::class, 'index'])->name('designer
 Route::get('designs/show', [DesignController::class, 'show'])->name('designer.show');
 Route::get('designs/edit/{id?}', [DesignController::class, 'edit'])->name('designer.edit');
 Route::post('designs/update', [DesignController::class, 'update'])->name('designer.update');
-Route::get('designs/delete/{id?}', [DesignController::class, 'delete'])->name('designer.delete');
+Route::get('designs/delete/{id?}', [DesignController::class, 'destroy'])->name('designer.delete');
 
 
 
