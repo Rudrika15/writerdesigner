@@ -91,7 +91,7 @@ class WriterController extends Controller
         try {
             $writer = Writerslogan::find($id);
             $writer->delete();
-            return redirect()->back()->with('success', 'Slogan deleted successfully!');
+            return redirect()->back()->with('error', 'Slogan deleted successfully!');
         } catch (\Throwable $th) {
             throw $th;
         }
