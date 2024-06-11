@@ -19,7 +19,13 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <style>
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+            box-shadow: 0 0 0px 1000px white inset !important;
 
+        }
+    </style>
 </head>
 
 <body style="background: linear-gradient(70deg, #012e6f, #00b9f0);">
@@ -43,36 +49,57 @@
                                     <div class="text-center pb-5">
                                         <img src="{{ asset('images/logo.png') }}" class="img-fluid w-50" alt="">
                                     </div>
-                                    <form>
-                                        <div class="row">
-                                            <div class="col ">
-                                                <input type="email" class="form-control w-75 form-control-user"
+                                    <form action="{{ route('login') }}" method="POST">
+                                        @csrf
+
+                                        <div class="form-group" style="margin-left: 150px !important; ">
+                                            <div>
+                                                <label for="email">Email Address </label>
+                                                <input type="email" name="email"
+                                                    class="form-control shadow-none mb-3 w-75 mb-3"
+                                                    style="height: 45px; font-size: 100%; border-radius: 10px;"
                                                     id="exampleInputEmail" aria-describedby="emailHelp"
                                                     placeholder="Enter Email Address...">
+                                                <div id="emailHelp" class="form-text mb-3 "><b> We'll never share
+                                                        your email
+                                                        with
+                                                        anyone else. </b></div>
+                                                @error('email')
+                                                    <span class="text-danger"> {{ $message }}</span>
+                                                @enderror
                                             </div>
-                                            <div class="col">
-                                                <input type="password" class="form-control w-75 form-control-user"
-                                                    id="exampleInputPassword" placeholder="Password">
+
+                                            <div>
+                                                <label for="password">Password</label>
+                                                <input type="password" name="password"
+                                                    class="form-control w-75 shadow-none" id="exampleInputPassword"
+                                                    placeholder="Password"
+                                                    style="background-color: white !important; height: 45px; border-radius: 10px;">
+                                                @error('password')
+                                                    <span class="text-danger"> {{ $message }}</span>
+                                                @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group">
+
+                                        {{-- <div class="form-group" style="margin-left: 150px !important;">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 <label class="custom-control-label" for="customCheck">Remember
                                                     Me</label>
                                             </div>
-                                        </div>
-                                        <a href="index.html" class="btn btn-primary rounded-pill ">
+                                        </div> --}}
+                                        <button type="submit" class="btn  text-center shadow-none"
+                                            style="margin-left: 330px !important; background-color: #012e6f; color: white">
                                             Login
-                                        </a>
+                                        </button>
 
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="{{ route('otp.login') }}">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
+                                        <a class="small" href="{{ route('register') }}">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>
