@@ -56,14 +56,19 @@
                                             <div>
                                                 <label for="email">Email Address </label>
                                                 <input type="email" name="email"
-                                                    class="form-control shadow-none mb-3 w-75 mb-3"
+                                                    class="form-control shadow-none w-75 "
                                                     style="height: 45px; font-size: 100%; border-radius: 10px;"
                                                     id="exampleInputEmail" aria-describedby="emailHelp"
                                                     placeholder="Enter Email Address...">
-                                                <div id="emailHelp" class="form-text mb-3 "><b> We'll never share
-                                                        your email
-                                                        with
-                                                        anyone else. </b></div>
+                                                <div id="emailHelp" class="form-text mb-3 ">
+                                                    <small>
+                                                        <b> We'll never share
+                                                            your email
+                                                            with
+                                                            anyone else.
+                                                        </b>
+                                                    </small>
+                                                </div>
                                                 @error('email')
                                                     <span class="text-danger"> {{ $message }}</span>
                                                 @enderror
