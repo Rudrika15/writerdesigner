@@ -1,4 +1,4 @@
-@extends('extra.master')
+@extends('layout.app')
 @section('title', 'Brand beans | Payment Report ')
 @section('content')
     <div class='container'>
@@ -30,7 +30,8 @@
                                 <tbody>
                                     @foreach ($report as $reports)
                                         <tr>
-                                            <td><img src="{{ asset('paymentScreenshot') }}/{{ $reports->screenshot }}" alt="image" style="height: 300px; width: 300px;"></td>
+                                            <td><img src="{{ asset('paymentScreenshot') }}/{{ $reports->screenshot }}"
+                                                    alt="image" style="height: 300px; width: 300px;"></td>
                                             <td>{{ $reports->user->name }}</td>
                                             <td>
                                                 @if ($reports->status == 'Pending')
@@ -42,11 +43,15 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <input type="hidden" name="userId" class="userId" value="{{ $reports->userId }}">
-                                                <select name="status" id="" class="form-control statusDropdown" data-id="{{ $reports->id }}" style="width: 160px;">
+                                                <input type="hidden" name="userId" class="userId"
+                                                    value="{{ $reports->userId }}">
+                                                <select name="status" id="" class="form-control statusDropdown"
+                                                    data-id="{{ $reports->id }}" style="width: 160px;">
                                                     <option selected disabled>--select status--</option>
-                                                    <option value="Approved" @if ($reports->status == 'Approved') selected @endif>Approved</option>
-                                                    <option value="Rejected" @if ($reports->status == 'Rejected') selected @endif>Rejected</option>
+                                                    <option value="Approved"
+                                                        @if ($reports->status == 'Approved') selected @endif>Approved</option>
+                                                    <option value="Rejected"
+                                                        @if ($reports->status == 'Rejected') selected @endif>Rejected</option>
                                                 </select>
 
                                             </td>
