@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\ActivityController;
 use App\Http\Controllers\admin\BrandCategoryController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\CategoryInfluencerController;
+use App\Http\Controllers\admin\CostController;
 use App\Http\Controllers\admin\CouponController;
 use App\Http\Controllers\admin\ManualPaymentController;
 use App\Http\Controllers\admin\MediaController;
@@ -41,6 +42,7 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 // OTP 
 Route::get('home', [DashboardController::class, 'home'])->name('home');
@@ -269,3 +271,7 @@ Route::get('/export-users', [UserController::class, 'export'])->name('export.use
 
 // Update User Status
 Route::put('/users/{id}/update-status', [UserController::class, 'updateStatus'])->name('users.updateStatus');
+
+// Content Creators Cost
+Route::get('designer-cost/{id?}', [CostController::class, 'create'])->name('designer.cost');
+Route::post('designer-cost-store', [CostController::class, 'store'])->name('designer-cost.store');

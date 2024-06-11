@@ -261,4 +261,3 @@ Route::get('/admin/brand/index', [UserController::class, 'brandList'])->name('ad
 Route::get('/admin/brand/offer/create/{id?}', [UserController::class, 'brandOfferAdd'])->name('admin.brand.offer.create');
 Route::get('/admin/brand/create', [UserController::class, 'addBrand'])->name('admin.brand.create');
 Route::post('/admin/brand/store', [UserController::class, 'addBrandCode'])->name('admin.brand.store');
-
