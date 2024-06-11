@@ -128,7 +128,7 @@ class DesignController extends Controller
         $this->validate($request, [
             'mediaType' => 'required',
             'title' => 'required',
-            'sequence' => 'required',
+            // 'sequence' => 'required',
         ]);
 
         try {
@@ -136,7 +136,7 @@ class DesignController extends Controller
             $design = Design::find($id);
             $design->mediaType = $request->mediaType;
             $design->title = $request->title;
-            $design->sequence = $request->sequence;
+            $design->sequence = mt_rand(0, 9);
             if ($request->sourcePath) {
                 $image = $request->sourcePath;
                 $design->sourcePath = time() . '.' . $request->sourcePath->extension();

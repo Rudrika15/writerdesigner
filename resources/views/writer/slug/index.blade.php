@@ -5,56 +5,7 @@
         <!-- Add this to your Blade template -->
 
         <div class='row pt-5'>
-            @if (session()->has('success'))
-                <div class="toast align-items-center text-white show bg-success" role="alert" aria-live="assertive"
-                    aria-atomic="true" data-bs-autohide="true" data-bs-delay="5000">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                            {{ session('success') }}
-                        </div>
 
-                        {{-- <button type="button" class="btn-close me-2 m-auto bg-transparent " data-bs-dismiss="toast"
-                            aria-label="Close">X</button> --}}
-
-                    </div>
-                    <div class="progress" style="height: 3px;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar"
-                            style="width: 0%"></div>
-                    </div>
-                </div>
-            @endif
-            @if (session()->has('error'))
-                <div class="toast align-items-center text-white show bg-danger" role="alert" aria-live="assertive"
-                    aria-atomic="true" data-bs-autohide="true" data-bs-delay="5000">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                            {{ session('error') }}
-                        </div>
-                        {{-- <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                            aria-label="Close"></button> --}}
-                    </div>
-                    <div class="progress" style="height: 3px;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar"
-                            style="width: 0%"></div>
-                    </div>
-                </div>
-            @endif
-            @if (session()->has('warning'))
-                <div class="toast align-items-center text-white show bg-warning" role="alert" aria-live="assertive"
-                    aria-atomic="true" data-bs-autohide="true" data-bs-delay="5000">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                            {{ session('warning') }}
-                        </div>
-                        {{-- <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                        aria-label="Close"></button> --}}
-                    </div>
-                    <div class="progress" style="height: 3px;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar"
-                            style="width: 0%"></div>
-                    </div>
-                </div>
-            @endif
             <div class='col-md-12'>
                 <div class="d-flex justify-content-between mb-3">
                     <div class="p-2">

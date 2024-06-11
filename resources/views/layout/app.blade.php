@@ -33,16 +33,16 @@
         <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #012e6f" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="bg-light sidebar-brand d-flex align-items-center justify-content-center"
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: #f8f9fc"
                 href="{{ route('home') }}">
                 <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
             </a>
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+            {{-- <hr class="sidebar-divider my-0"> --}}
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
+            <li class="nav-item {{ request()->is('home*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -115,7 +115,7 @@
                 <hr class="sidebar-divider">
                 <li class="nav-item {{ request()->is('admindesign*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('admindesign.admindesign') }}">
-                         {{--  <i class="fa fa-image"></i>  --}}
+                        {{--  <i class="fa fa-image"></i>  --}}
                         <span>Design</span></a>
                 </li>
                 <!-- Divider -->
@@ -276,7 +276,8 @@
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle" style="background-color: #00b9f0;"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle"
+                    style="background-color: #00b9f0;"></button>
             </div>
 
         </ul>
@@ -335,6 +336,61 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    <div class="d-flex justify-content-end">
+                        @if (session()->has('success'))
+                            <div class="toast align-items-center text-white show bg-success" role="alert"
+                                aria-live="assertive" aria-atomic="true" data-bs-autohide="true"
+                                data-bs-delay="5000">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                        {{ session('success') }}
+                                    </div>
+
+                                    {{-- <button type="button" class="btn-close me-2 m-auto bg-transparent " data-bs-dismiss="toast"
+                            aria-label="Close">X</button> --}}
+
+                                </div>
+                                <div class="progress" style="height: 3px;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                                        role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        @endif
+                        @if (session()->has('error'))
+                            <div class="toast align-items-center text-white show bg-danger" role="alert"
+                                aria-live="assertive" aria-atomic="true" data-bs-autohide="true"
+                                data-bs-delay="5000">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                        {{ session('error') }}
+                                    </div>
+                                    {{-- <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                            aria-label="Close"></button> --}}
+                                </div>
+                                <div class="progress" style="height: 3px;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                                        role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        @endif
+                        @if (session()->has('warning'))
+                            <div class="toast align-items-center text-white show bg-warning" role="alert"
+                                aria-live="assertive" aria-atomic="true" data-bs-autohide="true"
+                                data-bs-delay="5000">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                        {{ session('warning') }}
+                                    </div>
+                                    {{-- <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button> --}}
+                                </div>
+                                <div class="progress" style="height: 3px;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark"
+                                        role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        @endif
+                    </div>
                     @yield('content')
                 </div>
                 <!-- /.container-fluid -->
