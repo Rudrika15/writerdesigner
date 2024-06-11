@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\OfferController;
 use App\Http\Controllers\admin\OfferSliderController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\RoleController;
+use App\Http\Controllers\admin\TemplateDetailController;
 use App\Http\Controllers\admin\TemplatemasterController;
 use App\Http\Controllers\admin\TypeController;
 use App\Http\Controllers\admin\TypedetailController;
@@ -104,6 +105,9 @@ Route::get('admincategory/edit/{id}', [CategoryController::class, 'edit'])->name
 Route::post('admincategory/update', [CategoryController::class, 'update'])->name('admincategory.update');
 Route::get('admincategory/delete/{id?}', [CategoryController::class, 'destroy'])->name('admincategory.delete');
 
+// select Category Page
+Route::get('adminMedia/select-category', [MediaController::class, 'selectCategory'])->name('adminmedia.selectCategory');
+
 
 // Media
 Route::get('adminMedia/index', [MediaController::class, 'index'])->name('adminmedia.index');
@@ -135,6 +139,15 @@ Route::post('admintemplatemaster/store', [TemplatemasterController::class, 'stor
 Route::get('admintemplatemaster/edit/{id}', [TemplatemasterController::class, 'edit'])->name('admintemplatemaster.edit');
 Route::post('admintemplatemaster/update', [TemplatemasterController::class, 'update'])->name('admintemplatemaster.update');
 Route::get('admintemplatemaster/delete/{id?}', [TemplatemasterController::class, 'destroy'])->name('admintemplatemaster.delete');
+
+
+// Template Master
+Route::get('adminTemplateDetail/index/{id?}', [TemplateDetailController::class, 'index'])->name('adminTemplateDetail.index');
+Route::get('adminTemplateDetail/create', [TemplateDetailController::class, 'create'])->name('adminTemplateDetail.create');
+Route::post('adminTemplateDetail/store', [TemplateDetailController::class, 'store'])->name('adminTemplateDetail.store');
+Route::get('adminTemplateDetail/edit/{id}', [TemplateDetailController::class, 'edit'])->name('adminTemplateDetail.edit');
+Route::post('adminTemplateDetail/update', [TemplateDetailController::class, 'update'])->name('adminTemplateDetail.update');
+Route::get('adminTemplateDetail/delete/{id?}', [TemplateDetailController::class, 'destroy'])->name('adminTemplateDetail.delete');
 
 
 // Product
@@ -245,3 +258,14 @@ Route::get('/admin/brand/index', [UserController::class, 'brandList'])->name('ad
 Route::get('/admin/brand/offer/create/{id?}', [UserController::class, 'brandOfferAdd'])->name('admin.brand.offer.create');
 Route::get('/admin/brand/create', [UserController::class, 'addBrand'])->name('admin.brand.create');
 Route::post('/admin/brand/store', [UserController::class, 'addBrandCode'])->name('admin.brand.store');
+
+// user Report
+
+Route::get('user/report/index', [UserController::class, 'allUser'])->name('adminsubscription.index');
+
+
+// export
+Route::get('/export-users', [UserController::class, 'export'])->name('export.users');
+
+// Update User Status
+Route::put('/users/{id}/update-status', [UserController::class, 'updateStatus'])->name('users.updateStatus');

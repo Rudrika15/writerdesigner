@@ -1,4 +1,4 @@
-@extends('extra.master')
+@extends('layout.app')
 @section('title', 'Brand beans | Notification ')
 @section('content')
     <div class='container'>
@@ -19,25 +19,28 @@
                 <div class="card">
                     <div class="card-body">
 
-
-                        <table class="table table-bordered table-responsive">
-                            <thead>
-                                <tr>
-                                    <th> Title</th>
-                                    <th> Option</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($type as $type)
+                        <div class="table-responsive">
+                            <table class="table table-bordered ">
+                                <thead>
                                     <tr>
-                                        <td>{{ $type->title }}</td>
-                                        <td><a class="btn btn-info btn-sm" href="{{ route('type.edit', $type->id) }}">Edit</a>
-                                            <a class="btn btn-danger btn-sm" href="{{ route('type.delete', $type->id) }}">Delete</a>
-                                        </td>
+                                        <th> Title</th>
+                                        <th> Option</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($type as $type)
+                                        <tr>
+                                            <td>{{ $type->title }}</td>
+                                            <td><a class="btn btn-info btn-sm"
+                                                    href="{{ route('type.edit', $type->id) }}">Edit</a>
+                                                <a class="btn btn-danger btn-sm"
+                                                    href="{{ route('type.delete', $type->id) }}">Delete</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                 </div>
