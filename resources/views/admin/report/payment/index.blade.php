@@ -16,9 +16,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="table-responsive" style="margin-top: 15px;">
+                        <div class="table-responsive mt-3">
 
-                            <table class="table table-bordered table-responsive">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th> Screenshot</th>

@@ -168,6 +168,21 @@ Route::get('admin/brand/package/activity/edit/{id?}', [ActivityController::class
 Route::post('admin/brand/package/activity/update', [ActivityController::class, 'update'])->name('admin.brand.activity.update');
 Route::get('admin/brand/package/activity/delete/{id?}', [ActivityController::class, 'delete'])->name('admin.brand.activity.delete');
 
+// brand Packages
+Route::get('admin/package/index', [BrandPackageController::class, 'index'])->name('admin.brand.package.index');
+Route::get('admin/package/create', [BrandPackageController::class, 'create'])->name('admin.brand.package.create');
+Route::post('admin/package/store', [BrandPackageController::class, 'store'])->name('admin.brand.package.store');
+Route::get('admin/package/edit/{id?}', [BrandPackageController::class, 'edit'])->name('admin.brand.package.edit');
+Route::post('admin/package/update', [BrandPackageController::class, 'update'])->name('admin.brand.package.update');
+Route::get('admin/package/delete/{id?}', [BrandPackageController::class, 'destroy'])->name('admin.brand.package.delete');
+
+// brand package details
+Route::get('admin/package/detail/index/{id?}', [BrandPackageDetailController::class, 'index'])->name('admin.brand.package.detail.index');
+Route::post('admin/package/detail/store', [BrandPackageDetailController::class, 'store'])->name('admin.brand.package.detail.store');
+Route::get('admin/package/detail/delete/{id?}', [BrandPackageDetailController::class, 'delete'])->name('admin.brand.package.detail.delete');
+
+Route::get('brand/pricing', [BrandPackageDetailController::class, 'pricingView'])->name('brand.pricing');
+
 
 // influencer category
 Route::get('influencer/category/index', [CategoryInfluencerController::class, 'index'])->name('influencer.index');

@@ -20,8 +20,8 @@
                     <div class="card-body">
                         <form action="{{ route('adminmedia.index') }}" method="get">
                             @csrf
-                            <div class="row">
-                                <div class="col-md-6">
+                            <div class="row mb-3">
+                                <div class="col-md-4">
                                     <select name="category" class="form-control " width="100%" id="dropdown">
                                         <option selected disabled>--Search By Category Name--</option>
                                         @foreach ($category as $category)
@@ -30,11 +30,14 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" name="title" placeholder="Search by Title" class="form-control input-sm">
+                                    <input type="text" name="title" placeholder="Search by Title"
+                                        class="form-control input-sm">
                                 </div>
-                                <div class="col-md-12" style="display: flex; justify-content: end; padding-right: 200px; padding-top:10px">
-                                    <button class="btn btn-sm btn-success" style="margin-right: 5px" value="filter" name="submit">Filter</button>
-                                    <a href="{{ route('adminmedia.index') }}" class="btn btn-sm btn-danger">Reset</a>
+                                <div class="col-md-4"
+                                    style="display: flex; justify-content: end; padding-right: 200px;">
+                                    <button class="btn btn-sm btn-success" style="margin-right: 5px" value="filter"
+                                        name="submit">Filter</button>
+                                    <a href="{{ route('adminmedia.index') }}" class="btn btn-sm btn-danger p-2">Reset</a>
                                 </div>
                             </div>
 
@@ -63,16 +66,30 @@
                                         <td>{{ $data->mediaType }}</td>
                                         <td>{{ $data->name }}</td>
                                         @if ($data->mediaType != 'Video')
-                                            <td> <a href="{{ url('mediasourceimg') }}/{{ $data->sourcePath }}" target="_blank"> <img src="{{ url('mediasourceimg') }}/{{ $data->sourcePath }}" class="img-thumbnail" style="width:50px;height:50px"></a></td>
+                                            <td> <a href="{{ url('mediasourceimg') }}/{{ $data->sourcePath }}"
+                                                    target="_blank"> <img
+                                                        src="{{ url('mediasourceimg') }}/{{ $data->sourcePath }}"
+                                                        class="img-thumbnail" style="width:50px;height:50px"></a></td>
                                         @else
                                             <td><video height="100px" controls>
-                                                    <source src="{{ url('mediasourceimg') }}/{{ $data->sourcePath }}" type="video/mp4">
+                                                    <source src="{{ url('mediasourceimg') }}/{{ $data->sourcePath }}"
+                                                        type="video/mp4">
                                                 </video></td>
                                         @endif
                                         <td>{{ $data->isPremium }}</td>
                                         <td>{{ $data->title }}</td>
-                                        <td> <a href="{{ url('mediapreviewimg') }}/{{ $data->previewPath }}" target="_blank"> <img src="{{ url('mediapreviewimg') }}/{{ $data->previewPath }}" class="img-thumbnail" style="width:50px;height:50px"></a></td>
-                                        <td><a class="btn btn-primary btn-sm" data-id="$date->id" href="{{ route('adminmedia.edit', $data->id) }}">Edit</a> <a class="btn btn-danger btn-sm" href="{{ route('adminmedia.delete', $data->id) }}">Delete</a></td>
+                                        <td> <a href="{{ url('mediapreviewimg') }}/{{ $data->previewPath }}"
+                                                target="_blank"> <img
+                                                    src="{{ url('mediapreviewimg') }}/{{ $data->previewPath }}"
+                                                    class="img-thumbnail" style="width:50px;height:50px"></a></td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a class="btn btn-primary btn-sm" style="margin-right: 5px" data-id="$date->id"
+                                                    href="{{ route('adminmedia.edit', $data->id) }}">Edit</a> <a
+                                                    class="btn btn-danger btn-sm"
+                                                    href="{{ route('adminmedia.delete', $data->id) }}">Delete</a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

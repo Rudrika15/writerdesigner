@@ -83,6 +83,7 @@ Route::get('adminMedia/edit/{id}', [MediaController::class, 'edit'])->name('admi
 Route::post('adminMedia/update', [MediaController::class, 'update'])->name('adminmedia.update');
 Route::get('adminMedia/delete/{id?}', [MediaController::class, 'destroy'])->name('adminmedia.delete');
 Route::get('adminMedia/downloads', [MediaController::class, 'downloads'])->name('admindownload.index');
+
 // select Category Page
 Route::get('adminMedia/select-category', [MediaController::class, 'selectCategory'])->name('adminmedia.selectCategory');
 
@@ -221,6 +222,7 @@ Route::get('typedetail/delete/{id?}', [TypedetailController::class, 'destroy'])-
 // user Report
 
 Route::get('user/report/index', [UserController::class, 'allUser'])->name('adminsubscription.index');
+
 // Update User Status
 Route::put('/users/{id}/update-status', [UserController::class, 'updateStatus'])->name('users.updateStatus');
 

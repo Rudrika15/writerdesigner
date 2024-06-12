@@ -89,11 +89,11 @@
         CREATOR
     </div>
     <li class="nav-item {{ request()->is('designs*') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('home') }}">
+        <a class="nav-link" href="{{ route('admin.brand.package.index') }}">
             <i class="fa fa-box"></i>
             <span>Packages</span></a>
     </li>
-    <hr class="sidebar-divider">
+    {{--  <hr class="sidebar-divider">  --}}
     {{--  <div class="sidebar-heading text-center">
         EXTRA
     </div>

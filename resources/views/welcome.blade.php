@@ -51,7 +51,7 @@
                     </ul>
                 </nav>
                 <ul>
-                    <li><a href="#" class="custombtn">Login</a></li>
+                    <li><a href="{{route('login')}}" class="custombtn">Login</a></li>
                     <li><a href="#" class="custombtn highlighbtn">Register</a></li>
                 </ul>
                 <div class="side-menu-close d-flex d-lg-none flex-wrap flex-column align-items-center justify-content-center ml-auto">
