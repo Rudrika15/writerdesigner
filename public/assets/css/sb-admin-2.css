@@ -11754,14 +11754,14 @@ body.sidebar-toggled footer.sticky-footer {
     background-color: transparent !important;
 }
 .nav-item:hover {
-  color: #00B9F0;
-  font-weight: 700 !important;
-  background-color: #00B9F0;
+    color: #00b9f0;
+    font-weight: 700 !important;
+    background-color: #00b9f0;
 }
 .sidebar .nav-item.active {
-  background-color: #00B9F0 !important;
-  font-weight: 700 !important;
+    background-color: #00b9f0 !important;
+    font-weight: 700 !important;
 }
 .no-hover:hover {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }

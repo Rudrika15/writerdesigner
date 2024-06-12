@@ -51,7 +51,56 @@ class DashboardController extends Controller
             // end
 
             $details = CardsModels::where('user_id', '=', $authid)->first();
-            $id = $details->id;
+            // return $details;
+
+            if ($details == null) {
+
+                $cardModels = new CardsModels();
+                $cardModels->user_id = $authid;
+                $cardModels->save();
+
+                $findservice = Servicedetail::where('card_id', '=', $cardModels->id)->first();
+                if (!$findservice) {
+                    $servicedetail = new Servicedetail();
+                    $servicedetail->card_id = $cardModels->id;
+                    $servicedetail->save();
+                }
+                $findpayment = Payment::where('card_id', '=',  $cardModels->id)->first();
+                if (!$findpayment) {
+                    $payment = new Payment();
+                    $payment->card_id = $cardModels->id;
+                    $payment->save();
+                }
+                $findlink = Link::where('card_id', '=', $cardModels->id)->first();
+                if (!$findlink) {
+                    $link = new Link();
+                    $link->card_id = $cardModels->id;
+                    $link->save();
+                }
+                $id = $cardModels->user_id;
+            } else {
+                $findservice = Servicedetail::where('card_id', '=', $details->id)->first();
+                if (!$findservice) {
+                    $servicedetail = new Servicedetail();
+                    $servicedetail->card_id = $details->id;
+                    $servicedetail->save();
+                }
+                $findpayment = Payment::where('card_id', '=',  $details->id)->first();
+                if (!$findpayment) {
+                    $payment = new Payment();
+                    $payment->card_id = $details->id;
+                    $payment->save();
+                }
+                $findlink = Link::where('card_id', '=', $details->id)->first();
+                if (!$findlink) {
+                    $link = new Link();
+                    $link->card_id = $details->id;
+                    $link->save();
+                }
+
+                $id = $details->id;
+            }
+
             #for service details
             $servicedetail = Servicedetail::where('card_id', '=', $id)->get();
             #for payment data
@@ -61,11 +110,11 @@ class DashboardController extends Controller
                 ->where('cardservices.card_id', '=', $id)
                 ->get(['cardservices.*']);
 
-            $influencer = InfluencerProfile::where('userId', '=', $authid)->first();
-            $brand_category = BrandWithCategory::where('brandId', '=', $authid)->first();
-            $category = Categories::all();
-            $influencerCategory = CategoryInfluencer::all();
-            $brandCategory = BrandCategory::all();
+            // $influencer = InfluencerProfile::where('userId', '=', $authid)->first();
+            // $brand_category = BrandWithCategory::where('brandId', '=', $authid)->first();
+            $category = Category::all();
+            // $influencerCategory = CategoryInfluencer::all();
+            // $brandCategory = BrandCategory::all();
             // $category = Admin::all();
             $data = User::where('id', '=', $authid)->get();
             $link = Link::join('cards', 'cards.id', '=', 'cardlinkes.card_id')
@@ -100,7 +149,7 @@ class DashboardController extends Controller
             // if ($linkcount > 0) {
             //     return view('demo', compact('linkcount', 'inq', 'cardvideo', 'feed', 'id', 'details', 'qr', 'links', 'data1', 'category', 'cardimage', 'servicedetail', 'payment', 'admincategory', 'users'));
             // } else {
-            return view('user.profile.index', compact('authid', 'userurl', 'influencer', 'influencerCategory', 'brand_category', 'brandCategory', 'category', 'slider', 'bro', 'linkcount', 'inq', 'cardvideo', 'feed', 'id', 'details', 'qr', 'links', 'data1', 'category', 'cardimage', 'servicedetail', 'payment', 'admincategory', 'users'));
+            return view('user.profile.index', compact('authid', 'userurl', 'category', 'slider', 'bro', 'linkcount', 'inq', 'cardvideo', 'feed', 'id', 'details', 'qr', 'links', 'data1', 'category', 'cardimage', 'servicedetail', 'payment', 'admincategory', 'users'));
             // }
         } catch (\Throwable $th) {
             throw $th;

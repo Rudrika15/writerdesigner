@@ -16,12 +16,23 @@ use App\Http\Controllers\admin\TemplateDetailController;
 use App\Http\Controllers\admin\TemplatemasterController;
 use App\Http\Controllers\admin\TypeController;
 use App\Http\Controllers\admin\TypedetailController;
+use App\Http\Controllers\Admin\user\SubscriptionpackageController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\WriterDesignerController;
 use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\designer\DashboardController;
 use App\Http\Controllers\designer\DesignController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\user\BannerController;
+use App\Http\Controllers\user\BrochureController;
+use App\Http\Controllers\user\DashboardController as UserDashboardController;
+use App\Http\Controllers\user\FeedbackController;
+use App\Http\Controllers\user\InquiryController;
+use App\Http\Controllers\user\LinkController;
+use App\Http\Controllers\user\PaymentController;
+use App\Http\Controllers\user\QrcodeController;
+use App\Http\Controllers\user\ServiceController;
+use App\Http\Controllers\user\SliderController;
 use App\Http\Controllers\writer\WriterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +53,53 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Card
+Route::get('user/profile', [UserDashboardController::class, 'edit'])->name('profile');
+Route::get('mycard/{name?}', [UserDashboardController::class, 'index'])->name('user.card');
+Route::post('card/store', [UserDashboardController::class, 'store'])->name('card.store');
+Route::get('photo-delete/{id?}', [UserDashboardController::class, 'photodestroy'])->name('photo.delete');
+
+Route::post('link/update', [LinkController::class, 'update'])->name('link.update');
+Route::get('detail-delete/{id?}', [LinkController::class, 'delete'])->name('detail.delete');
+
+Route::get('payment/index/{id?}', [PaymentController::class, 'index'])->name('payment.index');
+Route::post('payment/update', [PaymentController::class, 'update'])->name('payment.update');
+
+// Service Details
+Route::get('serviceDetails/index', [SubscriptionpackageController::class, 'index'])->name('servicedetail.index');
+
+// Card Service
+Route::post('serviceDetails/store', [ServiceController::class, 'store'])->name('servicedetail.store');
+Route::get('serviceDetails/edit/{id?}', [ServiceController::class, 'edit'])->name('servicedetail.edit');
+Route::post('serviceDetails/update', [ServiceController::class, 'update'])->name('servicedetail.update');
+Route::get('serviceDetails/delete/{id?}', [ServiceController::class, 'destroy'])->name('servicedetail.delete');
+
+// QR Codes
+Route::post('qrcode/store', [QrcodeController::class, 'store'])->name('qrcode.store');
+Route::get('qr/delete/{id?}', [QrcodeController::class, 'destroy'])->name('qr.delete');
+Route::get('slider/delete/{id?}', [SliderController::class, 'destroy'])->name('slider.delete');
+
+// slider
+Route::post('/sliders', [UserDashboardController::class, 'sliders'])->name('sliders');
+
+//brou
+Route::post('brochure/store', [BrochureController::class, 'store'])->name('bro.store');
+Route::get('brochure/delete/{id?}', [BrochureController::class, 'destroy'])->name('bro.delete');
+
+// Feedback Form
+Route::post('feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');
+Route::get('feedback/index', [FeedbackController::class, 'index'])->name('feed.index');
+
+// banner
+Route::get('banner/index', [BannerController::class, 'index'])->name('banner.index');
+Route::get('banner/create', [BannerController::class, 'create'])->name('banner.create');
+Route::post('banner/store', [BannerController::class, 'store'])->name('banner.store');
+Route::get('banner/delete/{id?}', [BannerController::class, 'destory'])->name('banner.delete');
+
+// Inquiry
+Route::post('inquiry/store', [InquiryController::class, 'store'])->name('inquiry.store');
+Route::get('inquiry/index', [InquiryController::class, 'index'])->name('inquiry.index');
 
 
 // OTP 
