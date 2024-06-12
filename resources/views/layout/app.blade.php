@@ -86,8 +86,7 @@
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"
-                    style="background-color: #00b9f0;"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle" style="background-color: #00b9f0;"></button>
             </div>
 
         </ul>
@@ -121,7 +120,7 @@
                             <div class="dropdown-menu
                                     dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('profile') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -149,8 +148,7 @@
                     <div class="d-flex justify-content-end">
                         @if (session()->has('success'))
                             <div class="toast align-items-center text-white show bg-success" role="alert"
-                                aria-live="assertive" aria-atomic="true" data-bs-autohide="true"
-                                data-bs-delay="5000">
+                                aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="5000">
                                 <div class="d-flex">
                                     <div class="toast-body">
                                         {{ session('success') }}
