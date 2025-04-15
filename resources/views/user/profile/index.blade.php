@@ -3,6 +3,8 @@
 @section('content')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <div class="container-fluid pt-2 pb-5">
         <div class="d-flex justify-content-end p-3">
             <a href="{{ route('user.card') }}/{{ $userurl }}" target="_blank" class="btn btn-sm btn-primary">Preview
@@ -98,8 +100,8 @@
                                     <div class="row">
                                         <div class="col-md-4"><label>Profile Photo:</label></div>
                                         <div class="col-md-5">
-                                            <input type="file" accept="image/*" class="form-control " id="profilePhoto"
-                                                name="profilePhoto"
+                                            <input type="file" accept="image/*" class="form-control "
+                                                id="profilePhoto" name="profilePhoto"
                                                 value="{{ url('profile') }}/{{ $users->profilePhoto }}">
                                             @if ($errors->has('profilePhoto'))
                                                 <span class="text-danger">{{ $errors->first('profilePhoto') }}</span>
@@ -373,7 +375,7 @@
                                         </div>
                                         <div class="col-md-7">
                                             <input type="email" class="form-control " id="email" name="email"
-                                                value="{{ $links->email ?? '-' }}">
+                                                value="{{ $links->email }}">
                                             @if ($errors->has('email'))
                                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                                             @endif
@@ -386,7 +388,7 @@
                                                 Skype:</label></div>
                                         <div class="col-md-7">
                                             <input type="text" class="form-control " id="skype" name="skype"
-                                                value="{{ $links->skype ?? '-' }}">
+                                                value="{{ $links->skype }}">
                                         </div>
                                     </div>
                                 </div>

@@ -117,16 +117,19 @@
 
                                                 @if ($data->status != 'Approved')
                                                     <td>
-                                                        <a href="{{ route('admindesign.approve') }}/{{ $data->id }}"
-                                                            class="btn btn-success btn-sm" name="Approve"
-                                                            value="Approve">Approve</a>
                                                         <form action="{{ route('admindesign.reject') }}" method="post">
                                                             @csrf
-                                                            <input type="hidden" name="designId"
-                                                                value="{{ $data->id }}">
-                                                            <button class="btn btn-danger btn-sm" name="Reject"
-                                                                value="Reject" type="submit"
-                                                                onclick="return confirm('Do you really want to Reject?')">Reject</button>
+                                                            <div class="d-flex " style="gap: 5px">
+                                                                <a href="{{ route('admindesign.approve') }}/{{ $data->id }}"
+                                                                    class="btn btn-success btn-sm " name="Approve"
+                                                                    value="Approve">Approve</a>
+
+                                                                <input type="hidden" name="designId"
+                                                                    value="{{ $data->id }}">
+                                                                <button class="btn btn-danger btn-sm" name="Reject"
+                                                                    value="Reject" type="submit"
+                                                                    onclick="return confirm('Do you really want to Reject?')">Reject</button>
+                                                            </div>
                                                         </form>
                                                     </td>
                                                 @endif
